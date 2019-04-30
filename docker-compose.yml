@@ -16,6 +16,7 @@ services:
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+      - ${PHP_LOG_DIR-./logs/php}:/var/log/php
   mysql:
     build: ./bin/mysql
     container_name: '5.7-mysql'
